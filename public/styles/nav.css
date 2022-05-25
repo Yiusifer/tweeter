@@ -1,0 +1,17 @@
+nav {
+  background-color: #4056A1;
+  height: 120px;
+  color: #FFFFFF;
+  font-family: 'Bungee', cursive;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  padding: 1.5em;
+}
+
+.newTweet{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

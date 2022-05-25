@@ -1,0 +1,23 @@
+.tweeter {
+  background-color: darkcyan;
+  font-family: 'Bungee', cursive;
+}
+
+
+#tweet-text {
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: #f4f1ec;
+  display: flex;
+  align-items: baseline;
+  width: 870px;
+  height: 30px;
+
+}
+
+
+.submitLine {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px  ;
+}
