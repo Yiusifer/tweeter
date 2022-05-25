@@ -4,7 +4,16 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-content: flex-start;
   background-color: goldenrod;
   flex-direction: column;
   background-image: url(http://www.transparenttextures.com/patterns/black-linen.png);
 }
+
+.userHexagon {
+  width: 200px;
+  height: 200px;
+  margin-top: 150px;
+  margin-bottom: -50px;
+}
+

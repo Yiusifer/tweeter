@@ -8,6 +8,9 @@ nav {
   align-items: center;
   z-index: 1;
   padding: 1.5em;
+  position: fixed;
+  width: 100%;
+
 }
 
 .newTweet{
