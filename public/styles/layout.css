@@ -25,9 +25,10 @@ body {
 .mainContainer {
   width: 100%;
   display: flex;
-  justify-content: center;
-
+  flex-direction: column;
+  height: 800px;
   background-color:#f4f1ec;
+  align-items: center;
 }
 
 .innerContainer{
@@ -36,6 +37,13 @@ body {
   display: flex;
   justify-content: center;
 
+}
+
+.tweet-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

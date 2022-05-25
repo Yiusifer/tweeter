@@ -1,0 +1,53 @@
+article {
+
+
+
+  border-style: solid;
+
+}
+
+.avatar {
+  width: 1.5em;
+  height: 1.5em;
+
+}
+
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+
+  margin-left: 0.5em;
+  margin-right: 0.53em;
+}
+
+hr {
+  border: 2px solid black;
+  border-radius: 1px;
+
+}
+
+.tweet-footer{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-end ;
+  align-items: flex-start;
+}
+
+.icon {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.icon:hover{
+  color: aqua;
+}
+
+.date{
+  margin-top: -3px;
+}
