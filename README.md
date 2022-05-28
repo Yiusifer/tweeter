@@ -6,6 +6,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
+!["Screenshot of how layout looks like on desktop (>=1024 pixels)"](https://github.com/Yiusifer/tweeter/blob/master/docs/tweeterDesktopView.png?raw=true)
+!["Screenshot of how layout looks like on mobile (<1024 pixels)"](https://github.com/Yiusifer/tweeter/blob/master/docs/tweeterMobileView.png?raw=true)
+!["Screenshot displaying error if character count exceeds 140 limit"](https://github.com/Yiusifer/tweeter/blob/master/docs/tweeterError.png?raw=true)
 
 
 ## Getting Started
