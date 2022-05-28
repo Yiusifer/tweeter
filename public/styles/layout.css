@@ -6,7 +6,10 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -25,13 +28,12 @@ body {
 .mainContainer {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  height: 800px;
-  background-color:#f4f1ec;
-  align-items: center;
+  height: 100%;
+  background-color: #f4f1ec;
+
 }
 
-.innerContainer{
+.innerContainer {
   width: 90%;
   background-color: #f4f1ec;
   display: flex;
@@ -39,12 +41,70 @@ body {
 
 }
 
-.tweet-container{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center
-}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+/* Desktop & tablet view */
+@media screen and (min-width: 1024px) {
+
+  .mainContainer {
+    flex-direction: column;
+  }
+
+  .innerContainer {
+    width: 100%  ;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5em;
+    margin-bottom: 5em;
+
+
+  }
+  .user-bar {
+    width: 33.3%;
+
+    background-color: goldenrod;
+    background-image: url(http://www.transparenttextures.com/patterns/black-linen.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+    position: absolute;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+  }
+
+  /* Tweets */
+  article {
+    border-style: solid;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    width: 50%;
+    margin-right: 2em;
+  }
+
+  .userHexagon {
+    width: 50%;
+    height: 50%;
+    margin-top: 5%;
+  }
+
+  .new-tweet {
+    margin-right: 1.5em;
+    margin-left: 1.5em;
+    width: 50%;
+  }
+
+  .tweet-container {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+
+}
+
+

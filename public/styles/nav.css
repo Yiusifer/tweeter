@@ -18,3 +18,7 @@ nav {
   align-items: center;
   flex-direction: column;
 }
+
+.down-arrow{
+  color: red;
+}

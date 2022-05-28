@@ -36,39 +36,45 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- External JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
 
   <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/client.js" defer></script>
 
   <!-- Character Counter JS-->
   <script type="text/javascript" src="/scripts/composer-char-counter.js" defer></script>
+
+  <!-- Timeago Library-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 
 <body>
   <!-- Top nav bar (fixed) -->
   <nav>
     <span class="appTitle">tweeter</span>
-    <span class="newTweet">Write a new tweet <i class="fa-solid fa-angles-down"></i></span>
+    <span class="newTweet">Write a new tweet <i class="fa-solid fa-angles-down down-arrow"></i></span>
   </nav>
 
-  <header>
-    <div>
-      <img src="/images/profile-hex.png" class="userHexagon">
-    </div>
-    <br>
-    <div>
-      <h2>Your Name</h2>
-    </div>
-  </header>
 
   <!-- Page-specific (main) content here -->
 
   <div class="mainContainer">
+    <aside class="user-bar">
+      <img src="/images/profile-hex.png" class="userHexagon">
+      <h2 class="user-name">Bobina Ross</h2>
+      </div>
+    </aside>
+
     <main class="innerContainer">
 
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+          <h2>Compose Tweet</h2>
+          <h3 class="alert"><i class="fa-solid fa-triangle-exclamation warning"></i></h3>
+
+          <!-- Create a new tweet-->
         <form method="POST" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
@@ -78,34 +84,13 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+
       </section>
 
     </main>
+
     <section class=tweet-container>
-      <article>
-        <div class="tweet-header">
-          <h3> <img src="./images/avatar.png" class=avatar> Rhoda James</h3>
-          <p class="user-ID">@MrsJacobs</p>
-        </div>
-        <p> If I have seen farther it is by standing on the shoulders of giants </p>
-        <hr></hr>
-        <div class="tweet-footer">
-          <p class='date'>10 days ago </p>
-          <div class = icons>
-          <i class="fa-solid fa-flag icon"></i>
-          <i class="fa-solid fa-retweet icon"></i>
-          <i class="fa-solid fa-heart icon"></i>
-          </div>
-        </div>
-
-      </article>
-      <article>"Hi!"</article>
-      <article>"Hi!"</article>
-      <article>"Hi!"</article>
-
-
     </section>
-
 
   </div>
 

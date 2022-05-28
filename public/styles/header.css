@@ -1,4 +1,7 @@
-header {
+/* Mobile view */
+@media screen and (max-width: 1023px) {
+
+aside {
   height: 400px;
   width: 100%;
   display: flex;
@@ -11,9 +14,16 @@ header {
 }
 
 .userHexagon {
-  width: 200px;
-  height: 200px;
-  margin-top: 150px;
+  width: 9em;
+  height: 9em;
+  margin-top: 7em;
   margin-bottom: -50px;
 }
 
+.user-name {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25em;
+}
+
+};
