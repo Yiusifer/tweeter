@@ -60,19 +60,22 @@ $(document).ready(function () {
     let serializedeUrl = $(this).serialize();
 
     $.ajax({
-      url: 'http://localhost:8000/tweets',
+      url: '/tweets',
       type: "POST",
       data: serializedeUrl,
       success: function (data) {
         loadTweets()
       }
     })
+    .catch(function() {
+      console.log(error)
+    })
 
   })
 
   const loadTweets = function () {
     $.ajax({
-      url: 'http://localhost:8000/tweets',
+      url: '/tweets',
       type: 'GET',
       dataType: 'json',
     })
