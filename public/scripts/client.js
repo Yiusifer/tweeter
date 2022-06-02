@@ -5,11 +5,10 @@
  */
 
 $(document).ready(function () {
-  let serializedeUrl = $(this).serialize();
+
   $.ajax({
     url: '/tweets',
     type: "GET",
-    data: serializedeUrl,
     success: function (data) {
       loadTweets()
     }
@@ -17,48 +16,6 @@ $(document).ready(function () {
     .catch(function () {
       console.log(error)
     })
-
-
-
-
-  // $.ajax({
-  //   url: '/tweets',
-  //   type: "GET",
-  //   data: serializedeUrl,
-  //   success: function (data) {
-  //     loadTweets()
-  //   }
-  // })
-  // .catch(function() {
-  //   console.log(error)
-  // })
-
-
-  // $ajax({
-  //   url:'/',
-  //   type: 'GET',
-  //   success: function(  ) {
-  //    alert("hi!")
-  //   }
-  //   .catch(function(){
-  //     console.log(error)
-  //   })
-  // })
-
-  // $.ajax({
-  //   url: '/',
-  //   type: 'GET',
-  //   dataType: 'json',
-  // })
-  //   .done(function (data) {
-  //     renderTweets(data);
-  //   })
-  //   .catch(function() {
-  //     console.log(error);
-  //   })
-
-
-
 
   const escape = function (str) {
     let div = document.createElement("div");
@@ -107,7 +64,7 @@ $(document).ready(function () {
       return;
     }
     $('.alert').hide();
-    //$('#tweet-text').val('');
+
 
     let serializedeUrl = $(this).serialize();
     $.ajax({
@@ -116,12 +73,13 @@ $(document).ready(function () {
       data: serializedeUrl,
       success: function (data) {
         loadTweets()
+      },
+      error: function() {
+        console.log(error)
       }
     })
-      .catch(function () {
-        console.log(error)
-      })
-      $('#tweet-text').val('')
+
+    $('#tweet-text').val('')
   })
 
   const loadTweets = function () {
@@ -130,21 +88,16 @@ $(document).ready(function () {
       url: '/tweets',
       type: 'GET',
       dataType: 'json',
+      success: function(data) {
+        renderTweets(data)
+      },
+      error: function() {
+        console.log(error)
+      }
     })
-      .done(function (data) {
-        // $('#tweet-text').val('');
-        renderTweets(data);
-      })
-      .catch(function () {
-        console.log(error);
-      })
-
+  
   }
 
-  // const clearInput = function() {
-  //   $('#tweet-text').val('')
-
-  // }
 });
 
 
