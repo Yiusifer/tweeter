@@ -5,9 +5,60 @@
  */
 
 $(document).ready(function () {
+  let serializedeUrl = $(this).serialize();
+  $.ajax({
+    url: '/tweets',
+    type: "GET",
+    data: serializedeUrl,
+    success: function (data) {
+      loadTweets()
+    }
+  })
+    .catch(function () {
+      console.log(error)
+    })
 
-  const lengthError = "Please adhere to the 140 character limit";
-  const inputError = "Please enter a tweet!"
+
+
+
+  // $.ajax({
+  //   url: '/tweets',
+  //   type: "GET",
+  //   data: serializedeUrl,
+  //   success: function (data) {
+  //     loadTweets()
+  //   }
+  // })
+  // .catch(function() {
+  //   console.log(error)
+  // })
+
+
+  // $ajax({
+  //   url:'/',
+  //   type: 'GET',
+  //   success: function(  ) {
+  //    alert("hi!")
+  //   }
+  //   .catch(function(){
+  //     console.log(error)
+  //   })
+  // })
+
+  // $.ajax({
+  //   url: '/',
+  //   type: 'GET',
+  //   dataType: 'json',
+  // })
+  //   .done(function (data) {
+  //     renderTweets(data);
+  //   })
+  //   .catch(function() {
+  //     console.log(error);
+  //   })
+
+
+
 
   const escape = function (str) {
     let div = document.createElement("div");
@@ -56,9 +107,9 @@ $(document).ready(function () {
       return;
     }
     $('.alert').hide();
+    //$('#tweet-text').val('');
 
     let serializedeUrl = $(this).serialize();
-
     $.ajax({
       url: '/tweets',
       type: "POST",
@@ -67,26 +118,33 @@ $(document).ready(function () {
         loadTweets()
       }
     })
-    .catch(function() {
-      console.log(error)
-    })
-
+      .catch(function () {
+        console.log(error)
+      })
+      $('#tweet-text').val('')
   })
 
   const loadTweets = function () {
+
     $.ajax({
       url: '/tweets',
       type: 'GET',
       dataType: 'json',
     })
       .done(function (data) {
+        // $('#tweet-text').val('');
         renderTweets(data);
       })
-      .catch(function() {
+      .catch(function () {
         console.log(error);
       })
 
   }
+
+  // const clearInput = function() {
+  //   $('#tweet-text').val('')
+
+  // }
 });
 
 
