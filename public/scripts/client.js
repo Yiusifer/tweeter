@@ -10,12 +10,13 @@ $(document).ready(function () {
     url: '/tweets',
     type: "GET",
     success: function (data) {
-      loadTweets()
+      loadTweets();
+    },
+    error: function (error) {
+      console.log(error)
     }
   })
-    .catch(function () {
-      console.log(error)
-    })
+
 
   const escape = function (str) {
     let div = document.createElement("div");
@@ -53,6 +54,11 @@ $(document).ready(function () {
     }
   }
 
+  recentTweet = function (tweet) {
+    let update = tweet[-1];
+    createTweetElement(update)
+
+  }
 
   $('form').on('submit', function (event) {
     event.preventDefault();
@@ -67,14 +73,16 @@ $(document).ready(function () {
 
 
     let serializedeUrl = $(this).serialize();
+
     $.ajax({
       url: '/tweets',
       type: "POST",
       data: serializedeUrl,
       success: function (data) {
-        loadTweets()
+       loadTweets();
+
       },
-      error: function() {
+      error: function (error) {
         console.log(error)
       }
     })
@@ -88,14 +96,16 @@ $(document).ready(function () {
       url: '/tweets',
       type: 'GET',
       dataType: 'json',
-      success: function(data) {
+      success: function (data) {
+        $('.tweet-container').html('')
         renderTweets(data)
+
       },
-      error: function() {
+      error: function (error) {
         console.log(error)
       }
     })
-  
+
   }
 
 });
