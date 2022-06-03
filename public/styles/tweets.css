@@ -45,6 +45,7 @@ hr {
 p {
   margin-left: 1em;
   margin-right: 1em;
+  word-wrap: break-word;
 }
 
 .tweet-footer {

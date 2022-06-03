@@ -71,6 +71,8 @@ $(document).ready(function () {
     }
     $('.alert').hide();
 
+    $('.counter').val('140');
+
 
     let serializedeUrl = $(this).serialize();
 
