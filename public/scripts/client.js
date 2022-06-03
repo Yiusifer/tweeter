@@ -13,7 +13,7 @@ $(document).ready(function () {
       loadTweets();
     },
     error: function (error) {
-      console.log(error)
+      console.log(error);
     }
   })
 
@@ -52,13 +52,12 @@ $(document).ready(function () {
     for (tweet of tweetArray) {
       createTweetElement(tweet);
     }
-  }
+  };
 
   recentTweet = function (tweet) {
     let update = tweet[-1];
     createTweetElement(update)
-
-  }
+  };
 
   $('form').on('submit', function (event) {
     event.preventDefault();
@@ -85,12 +84,12 @@ $(document).ready(function () {
 
       },
       error: function (error) {
-        console.log(error)
+        console.log(error);
       }
     })
 
-    $('#tweet-text').val('')
-  })
+    $('#tweet-text').val('');
+  });
 
   const loadTweets = function () {
 
@@ -100,15 +99,15 @@ $(document).ready(function () {
       dataType: 'json',
       success: function (data) {
         $('.tweet-container').html('')
-        renderTweets(data)
+        renderTweets(data);
 
       },
       error: function (error) {
-        console.log(error)
+        console.log(error);
       }
     })
 
-  }
+  };
 
 });
 
